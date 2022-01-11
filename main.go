@@ -12,7 +12,6 @@ import (
 )
 
 func main() {
-	awsAccountNumber := "1"
 	argLength := len(os.Args[1:])
 	fmt.Printf("Arg length is %d\n", argLength)
 
@@ -55,6 +54,8 @@ func main() {
 }
 
 func ECR_BatchGetImage(repositoryName string, region string, sess session.Session) {
+	awsAccountNumber := "1"
+	
 	svc := ecr.New(&sess)
 
 	input := &ecr.ListImagesInput{
